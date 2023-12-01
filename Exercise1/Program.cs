@@ -19,3 +19,4 @@ for (i = 0; i < 10; i++)
     Console.WriteLine("Salário reajustado: " + newSalary);
 }
 Console.ReadLine();
+
