@@ -32,17 +32,17 @@ namespace Example17
             {
                 case "1":
                     Console.WriteLine("");
-                    getArtistas(artistas, albuns);
+                    GetArtists(artistas, albuns);
                     break;
 
                 case "2":
                     Console.WriteLine("");
-                    cadastrarArtista(artistas, albuns);
+                    InsertArtist(artistas, albuns);
                     break;
 
                 case "3":
                     Console.WriteLine("");
-                    updateArtista(artistas, albuns);
+                    UpdateArtist(artistas, albuns);
                     break;
 
                 case "4":
@@ -73,7 +73,7 @@ namespace Example17
             }
         }
 
-        public void cadastrarArtista(List<Artista> artistas, List<Albun> albuns)
+        public void InsertArtist(List<Artista> artistas, List<Albun> albuns)
         {
             Console.WriteLine("Nome do artista:");
             string nome = Console.ReadLine();
@@ -108,6 +108,10 @@ namespace Example17
 
             artistas.Add(artista);
 
+            Console.WriteLine("-------------------------------------------------");
+            Console.WriteLine("Artista cadastrado com sucesso.");
+            Console.WriteLine("-------------------------------------------------");
+
             foreach (var item in artistas)
             {
                 Console.WriteLine($"Id: {item.Id} , Nome: {item.Nome}, Quantidade de integrantes: {item.QuantidadeDeIntegrantes}, Ritmo: {item.Ritmo}");
@@ -116,7 +120,7 @@ namespace Example17
             PrincipalMenuArtista(artistas, albuns);
         }
 
-        public void getArtistas(List<Artista> artistas, List<Albun> albuns)
+        public void GetArtists(List<Artista> artistas, List<Albun> albuns)
         {
             foreach (var item in artistas)
             {
@@ -126,7 +130,7 @@ namespace Example17
             PrincipalMenuArtista(artistas, albuns);
         }
 
-        public void updateArtista(List<Artista> artistas, List<Albun> albuns)
+        public void UpdateArtist(List<Artista> artistas, List<Albun> albuns)
         {
             Console.WriteLine("Id do artista:");
             int id = int.Parse(Console.ReadLine());
@@ -155,6 +159,10 @@ namespace Example17
 
             var newList = UpdateObjectElementById(artistas, id, updateArtista);
 
+            Console.WriteLine("-------------------------------------------------");
+            Console.WriteLine("Artista atualizado com sucesso.");
+            Console.WriteLine("-------------------------------------------------");
+
             foreach (var item in newList)
             {
                 Console.WriteLine($"Id: {item.Id} , Nome: {item.Nome}, Quantidade de integrantes: {item.QuantidadeDeIntegrantes}, Ritmo: {item.Ritmo}");
@@ -170,6 +178,10 @@ namespace Example17
             int id = int.Parse(Console.ReadLine());
 
             var newList = RemoveElementById(artistas, id);
+
+            Console.WriteLine("-------------------------------------------------");
+            Console.WriteLine("Artista removido com sucesso.");
+            Console.WriteLine("-------------------------------------------------");
 
             foreach (var item in newList)
             {
